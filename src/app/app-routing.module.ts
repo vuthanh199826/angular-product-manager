@@ -4,6 +4,7 @@ import {ProductListComponent} from './product/product-list/product-list.componen
 import {ProductCreateComponent} from './product/product-create/product-create.component';
 import {ProductEditComponent} from './product/product-edit/product-edit.component';
 import {ProductDeleteComponent} from './product/product-delete/product-delete.component';
+import {LoginComponent} from './account/login/login.component';
 
 
 const routes: Routes = [
@@ -22,6 +23,10 @@ const routes: Routes = [
   {
     path: 'product/delete/:id',
     component: ProductDeleteComponent
+  },
+  {
+    path: 'account/login',
+    component: LoginComponent
   }
 ];
 

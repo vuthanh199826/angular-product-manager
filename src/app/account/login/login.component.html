@@ -1,0 +1,9 @@
+<p>login works!</p>
+<form [formGroup]="accountForm" (ngSubmit)="submit()">
+  <table>
+ <tr><td> <input type="text" formControlName="username"></td></tr>
+    <tr><td> <input type="text" formControlName="password"></td></tr>
+  <button>Login</button>
+  </table>
+</form>
+<router-outlet></router-outlet>

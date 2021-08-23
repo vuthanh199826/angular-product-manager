@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {ProductService} from '../../service/product.service';
-import {ActivatedRoute, ParamMap} from '@angular/router';
+import {ActivatedRoute, ParamMap, Router} from '@angular/router';
 import {FormControl, FormGroup} from '@angular/forms';
 
 @Component({
@@ -13,6 +13,7 @@ export class ProductEditComponent implements OnInit {
   id: number;
 
   constructor(private productService: ProductService,
+              private router: Router,
               private activatedRoute: ActivatedRoute) {
     this.activatedRoute.paramMap.subscribe((paramMap: ParamMap) => {
       this.id = +paramMap.get('id');
@@ -35,6 +36,7 @@ export class ProductEditComponent implements OnInit {
     const product = this.productForm.value;
     this.productService.updateProduct(id, product);
     alert('Success');
+    this.router.navigate(['/product/list']);
   }
 
 }
